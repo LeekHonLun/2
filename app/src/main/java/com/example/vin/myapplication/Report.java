@@ -60,6 +60,7 @@ public class Report extends AppCompatActivity implements
     public int countId = 1000;
     private TextView mLocationTextView;
     public Button mLocationButton;
+    public Button mSendButton;
     EditText txtDescription;
     TextView txtLocation;
     EditText txtTitle;
@@ -81,6 +82,7 @@ public class Report extends AppCompatActivity implements
         txtDescription = findViewById(R.id.txtDescription);
         txtTitle = findViewById(R.id.txtReportTitle);
         mLocationButton =(Button) findViewById(R.id.btnLocation);
+        mSendButton = (Button) findViewById(R.id.btnSend);
         mLocationTextView = (TextView) findViewById(R.id.txtLocation);
         //firedata base
         mAuth = FirebaseAuth.getInstance();
@@ -132,11 +134,14 @@ public class Report extends AppCompatActivity implements
         mLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mTrackingLocation) {
                     startTrackingLocation();
-                } else {
-                    sendReports();
-                }
+            }
+        });
+
+        mSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendReports();
             }
         });
 
@@ -180,7 +185,7 @@ public class Report extends AppCompatActivity implements
         final String location = txtLocation.getText().toString().trim();
         final String title = txtTitle.getText().toString().trim();
         final String description = txtDescription.getText().toString().trim();
-        final boolean permission = true;
+        final String image = "";
         //Check if title and description is empty
             if(TextUtils.isEmpty(title)){
                 Toast.makeText(this,"Please enter title",Toast.LENGTH_LONG).show();
@@ -191,7 +196,7 @@ public class Report extends AppCompatActivity implements
                 return;
             }
             chkID = String.valueOf(countId);
-        Reports reports = new Reports(username,location,title,description,date,countId,permission);
+        Reports reports = new Reports(username,location,title,description,date,countId,image);
         FirebaseDatabase.getInstance().getReference("Reports")
                 .child(chkID)
                 .setValue(reports).addOnCompleteListener(new OnCompleteListener<Void>(){

@@ -6,10 +6,14 @@ public class Reports {
     private String username, title, description, location;
     private String date;
     private int id;
-    private boolean permission;
+    private String image;
     public Reports(){
 
     }
+
+    public String getImage(){return image;}
+
+    public void setImage(){this.image = image;}
 
     public String getLocation(){return location;}
 
@@ -35,17 +39,16 @@ public class Reports {
 
     public void setId(int id){this.id = id; }
 
-    public boolean getPermission(){return permission;}
 
-    public void setPermission(boolean permission){this.permission = permission;}
 
-    public Reports(String username,String location, String title, String description, String date, int id, boolean permission){
+    public Reports(String username,String location, String title, String description, String date, int id, String image){
         this.username = username;
         this.location = location;
         this.title = title;
         this.description = description;
         this.date = date;
         this.id = id;
-        this.permission = permission;
+        this.image = image;
+
     }
 }

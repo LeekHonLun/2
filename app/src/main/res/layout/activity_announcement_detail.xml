@@ -7,12 +7,20 @@
     tools:context=".AnnouncementDetail">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/parent_layout"
+        android:weightSum="100">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/dImage"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textAlignment="center"
             android:text="@string/date"
             android:id="@+id/dDate"/>
         <TextView
@@ -20,17 +28,20 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:text="@string/location"
+            android:textAlignment="center"
             android:id="@+id/dLocation"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textAlignment="center"
             android:text="@string/title"
             android:id="@+id/dTitle"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textAlignment="center"
             android:text="@string/description"
             android:id="@+id/dDescription"/>
     </LinearLayout>

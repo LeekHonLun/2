@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:paddingBottom="15dp"
     android:weightSum="2"
+    android:id="@+id/parent_layout"
     android:orientation="horizontal">
     <LinearLayout
         android:layout_width="wrap_content"
@@ -31,11 +32,17 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:id="@+id/rDescription"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check"
-            android:visibility="invisible"
-            android:id="@+id/btncheckDetails"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/image1"
+            android:src="@mipmap/ic_launcher"/>
     </LinearLayout>
 </LinearLayout>

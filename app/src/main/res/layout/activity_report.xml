@@ -59,7 +59,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLocation"
         app:layout_constraintVertical_bias="0.855" />
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSend"
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="@+id/txtDescription"
+        app:layout_constraintLeft_toRightOf="@+id/btnLocation"/>
     <EditText
         android:id="@+id/txtDescription"
         android:layout_width="236dp"
